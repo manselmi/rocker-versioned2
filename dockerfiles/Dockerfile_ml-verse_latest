@@ -1,3 +1,4 @@
+# syntax = docker/dockerfile:1.0-experimental
 FROM rockerdev/ml-verse:4.0.0-cuda10.2-ubuntu18.04
 
 LABEL org.label-schema.license="GPL-2.0" \
@@ -5,6 +6,9 @@ LABEL org.label-schema.license="GPL-2.0" \
       org.label-schema.vendor="Rocker Project" \
       maintainer="Carl Boettiger <cboettig@ropensci.org>"
 
+ARG BUILDKIT_CACHE=1
+ARG R_MAKEVARS_SITE=/rocker_scripts/Makevars.ccache
+ARG APT_CONFIG=/rocker_scripts/apt-config
 
 
 
